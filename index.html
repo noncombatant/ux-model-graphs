@@ -29,25 +29,30 @@ href="mailto:chris@noncombatant.org">chris@noncombatant.org</a></p>
 
 <h2>Introduction</h2>
 
-<blockquote>
-
-The simple definition of ceremony above hides its complexity. The problem comes
-with modeling a human node. Like a computer protocol node, the human node has
-state and a state machine. It receives and emits messages, sometimes via a
-computer’s user interface (UI) and sometimes by human-to-human communication,
-whether intermediated by computer or not. However, the human input and output of
-messages is often subject to error, probably because of a translation or
-filtering mechanism that we have not fully characterized. Similarly, the human
-state machine is difficult to model. We don’t program humans the way we do
-computers, and when we try to, the attempt usually fails. We must instead learn
-the human state machine empirically, by observing actual human behavior.<br/>
-— Carl Ellison, “Ceremony Design And Analysis”
-</blockquote>
+<blockquote>The simple definition of ceremony above hides its complexity. The
+problem comes with modeling a human node. Like a computer protocol node, the
+human node has state and a state machine. It receives and emits messages,
+sometimes via a computer’s user interface (UI) and sometimes by human-to-human
+communication, whether intermediated by computer or not. However, the human
+input and output of messages is often subject to error, probably because of a
+translation or filtering mechanism that we have not fully characterized.
+Similarly, the human state machine is difficult to model. We don’t program
+humans the way we do computers, and when we try to, the attempt usually fails.
+We must instead learn the human state machine empirically, by observing actual
+human behavior.<br/>
+— Carl Ellison, “Ceremony Design And Analysis”</blockquote>
 
 <p>We can describe or model much of a software program’s behavior as transitions
 from 1 state to another. The same is true of the behavior of computing hardware,
 as well as protocols and ceremonies. In this paper, the generic term
 <em>machine</em> refers to any software, hardware, protocol, or ceremony.</p>
+
+<p>We can also (partially) model a human person’s behavior as transitions from 1
+state to another. Furthermore, we can attempt to model the person’s <em>mental
+state</em>, which is hidden to us, probabilistically — we can estimate the
+person’s mental state using <a
+href="http://projecteuclid.org/download/pdf_1/euclid.aoms/1177699147">hidden
+Markov models</a> (HMM).</p>
 
 <p>Good user experience (UX) engineering should help people to develop
 accurate-enough mental models of the machine’s state. (See for example <a
@@ -93,14 +98,10 @@ hence the fewest human-machine state mismatches that lead to vulnerability.</p>
 
 <h2>Prior Work</h2>
 
-<p><a
-href="http://projecteuclid.org/download/pdf_1/euclid.aoms/1177699147">Hidden
-Markov models</a></p>
-
 <h3>Ceremony Design And Analysis</h3>
 
-<p><a href="https://eprint.iacr.org/2007/399.pdf"><em>Ceremony Design And
-Analysis</em></a> by Carl Ellison</p>
+<p><a href="https://eprint.iacr.org/2007/399.pdf">“Ceremony Design And
+Analysis”</a> by Carl Ellison TODO...</p>
 
 <blockquote>
 
@@ -137,6 +138,12 @@ ceremony and of secrets stored in each node’s memory. We can run simulations a
 evaluate them against a set of expectations. We can do formal modeling and
 attempt to prove properties of the modeled ceremony. All of the techniques that
 we use for network protocol design should be available for ceremony design.</p>
+
+<p>…we can model the human node as a probabilistic state machine – one whose
+state variable has a probability distribution rather than a definite value and
+whose state transitions are changes in that probability distribution. Such a
+state machine would have a probability distribution of output messages as
+well.</p>
 
 </blockquote>
 
